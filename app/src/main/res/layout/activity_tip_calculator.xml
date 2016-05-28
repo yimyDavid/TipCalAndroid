@@ -40,9 +40,7 @@
                 android:textSize="60sp"
                 android:text="83.45"
                 android:textColor="#09f8e0"
-                android:background="@null"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
+                android:background="@null" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -64,33 +62,45 @@
                 android:text="25.45"
                 android:textColor="#dcdbdb"
                 android:background="@null"
-                android:layout_marginBottom="5dp" />
+                android:editable="false"
+                android:enabled="false" />
 
-            <SeekBar
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/seekBar"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="12"
-                android:id="@+id/lblPercentage"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textSize="20dp"
-                android:textStyle="bold|italic" />
+                <SeekBar
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekBar"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="12"
+                    android:max="30" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="12"
+                    android:id="@+id/lblPercentage"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold|italic"
+                    android:layout_weight="1"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:background="@drawable/gradient">
 
             <TextView
                 style="@style/lblDescription"
@@ -101,9 +111,7 @@
                 android:id="@+id/textView"
                 android:gravity="left"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp"
-                android:textStyle="bold"
-                android:textColor="#7a7a7a" />
+                android:textColor="#031969" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -114,10 +122,11 @@
                 android:gravity="center"
                 android:textSize="60sp"
                 android:text="83.45"
-                android:textColor="#FF3333"
+                android:textColor="#40492a"
+                android:editable="false"
+                android:enabled="false"
                 android:background="@null"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
+                android:textIsSelectable="true" />
 
             <TextView
                 style="@style/lblDescription"
@@ -127,9 +136,7 @@
                 android:text="Friends"
                 android:id="@+id/textView2"
                 android:gravity="left"
-                android:layout_marginLeft="16dp"
-                android:textStyle="bold"
-                android:textColor="#7a7a7a" />
+                android:textColor="#031969" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -140,28 +147,42 @@
                 android:gravity="center"
                 android:textSize="45dp"
                 android:text="25.45"
-                android:textColor="#1c1c1c"
-                android:background="@null"
-                android:layout_marginBottom="5dp" />
+                android:textColor="#504930"
+                android:editable="false"
+                android:enabled="false"
+                android:background="@null" />
 
-            <SeekBar
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/seekBar2"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp" />
+                android:layout_height="match_parent" >
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="12"
-                android:id="@+id/textView3"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="#3a3a3a"
-                android:textSize="20dp"
-                android:textStyle="bold|italic" />
+                <SeekBar
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekBar3"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="12"
+                    android:max="12"
+                    android:splitTrack="false"
+                    android:progressDrawable="@color/colorAccent"
+                    android:maxHeight="1dip" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="12"
+                    android:id="@+id/textView4"
+                    android:gravity="center"
+                    android:textColor="#3a3a3a"
+                    android:textSize="20dp"
+                    android:textStyle="bold|italic"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 </ScrollView>
