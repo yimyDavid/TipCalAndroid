@@ -38,9 +38,10 @@
                 android:id="@+id/txtBill"
                 android:gravity="center"
                 android:textSize="60sp"
-                android:text="83.45"
+                android:text="0.00"
                 android:textColor="#09f8e0"
-                android:background="@null" />
+                android:background="@null"
+                android:layout_gravity="right" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -59,7 +60,7 @@
                 android:id="@+id/txtTip"
                 android:gravity="center"
                 android:textSize="45dp"
-                android:text="25.45"
+                android:text="0.00"
                 android:textColor="#dcdbdb"
                 android:background="@null"
                 android:editable="false"
@@ -73,21 +74,22 @@
                 <SeekBar
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/seekBar"
+                    android:id="@+id/sbPercent"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="10dp"
                     android:layout_weight="12"
-                    android:max="30" />
+                    android:max="30"
+                    android:progress="15" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="12"
+                    android:text="15"
                     android:id="@+id/lblPercentage"
                     android:gravity="center"
                     android:textColor="#ffffff"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold|italic"
                     android:layout_weight="1"
                     android:layout_marginTop="4dp"
@@ -118,10 +120,10 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
-                android:id="@+id/editText"
+                android:id="@+id/vTotalBill"
                 android:gravity="center"
                 android:textSize="60sp"
-                android:text="83.45"
+                android:text="0.00"
                 android:textColor="#40492a"
                 android:editable="false"
                 android:enabled="false"
@@ -143,10 +145,10 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
-                android:id="@+id/editText2"
+                android:id="@+id/vTip"
                 android:gravity="center"
-                android:textSize="45dp"
-                android:text="25.45"
+                android:textSize="45sp"
+                android:text="0.00"
                 android:textColor="#504930"
                 android:editable="false"
                 android:enabled="false"
@@ -160,24 +162,25 @@
                 <SeekBar
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/seekBar3"
+                    android:id="@+id/sbFriends"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="10dp"
                     android:layout_weight="12"
-                    android:max="12"
+                    android:max="11"
                     android:splitTrack="false"
                     android:progressDrawable="@color/colorAccent"
-                    android:maxHeight="1dip" />
+                    android:maxHeight="1dip"
+                    android:progress="0" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="12"
-                    android:id="@+id/textView4"
+                    android:text="1"
+                    android:id="@+id/lblFriends"
                     android:gravity="center"
                     android:textColor="#3a3a3a"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold|italic"
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical" />
