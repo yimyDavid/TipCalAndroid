@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Tip %"
+                android:text="Tip"
                 android:id="@+id/lblTip"
                 android:gravity="left"
                 style="@style/lblDescription" />
@@ -70,6 +70,17 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:text="%"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic"
+                    android:textColor="#ffffff"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp" />
 
                 <SeekBar
                     android:layout_width="0dp"
@@ -159,6 +170,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="#"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic"
+                    android:textColor="#504930"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/textView3" />
+
                 <SeekBar
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -170,7 +193,8 @@
                     android:splitTrack="false"
                     android:progressDrawable="@color/colorAccent"
                     android:maxHeight="1dip"
-                    android:progress="0" />
+                    android:progress="0"
+                    android:layout_marginLeft="-15dp" />
 
                 <TextView
                     android:layout_width="0dp"
