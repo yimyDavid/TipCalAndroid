@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,7 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#3a3a3a"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -69,7 +71,9 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
 
                 <TextView
                     android:layout_width="0dp"
@@ -79,18 +83,17 @@
                     android:textSize="20sp"
                     android:textStyle="bold|italic"
                     android:textColor="#ffffff"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginBottom="5dp" />
 
                 <SeekBar
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/sbPercent"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="12"
                     android:max="30"
-                    android:progress="15" />
+                    android:progress="15"
+                    android:layout_marginTop="0dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -102,18 +105,19 @@
                     android:textColor="#ffffff"
                     android:textSize="20sp"
                     android:textStyle="bold|italic"
-                    android:layout_weight="1"
-                    android:layout_marginTop="4dp"
-                    android:layout_gravity="center_vertical" />
+                    android:layout_weight="2"
+                    android:layout_marginBottom="5dp" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="16dp"
-            android:background="@drawable/gradient">
+            android:background="@drawable/gradient"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
 
             <TextView
                 style="@style/lblDescription"
@@ -157,18 +161,20 @@
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/vTip"
-                android:gravity="center"
                 android:textSize="45sp"
                 android:text="0.00"
                 android:textColor="#504930"
                 android:editable="false"
                 android:enabled="false"
-                android:background="@null" />
+                android:background="@null"
+                android:gravity="center" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -178,21 +184,19 @@
                     android:textSize="20sp"
                     android:textStyle="bold|italic"
                     android:textColor="#504930"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="0dp"
                     android:id="@+id/textView3" />
 
                 <SeekBar
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/sbFriends"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="0dp"
                     android:layout_weight="12"
                     android:max="11"
                     android:splitTrack="false"
                     android:progressDrawable="@color/colorAccent"
-                    android:maxHeight="1dip"
+                    android:maxHeight="1dp"
                     android:progress="0"
                     android:layout_marginLeft="-15dp" />
 
@@ -206,10 +210,9 @@
                     android:textColor="#3a3a3a"
                     android:textSize="20sp"
                     android:textStyle="bold|italic"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical" />
+                    android:layout_weight="2" />
             </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
-</ScrollView>
+</LinearLayout>
