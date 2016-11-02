@@ -292,7 +292,7 @@ public class TipCalculator extends AppCompatActivity {
             CalculateTotal();
             calculateFriends();
 
-            //set the flags that determines if the seekbar has been move to false(reset)
+            //set the flags that determines if the seekbar has been moved to false(reset)
             changedsbFriends = changedsbPercent = false;
         }
 
