@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Propina</string>
+    <string name="lbl_round_bill">Redondear Factura</string>
+    <string name="lbl_round_tip">Redondear Propina</string>
+    <string name="lbl_tip_perc">Porcentaje de Propina</string>
+    <string name="nFriends">Cantidad de Amigos</string>
+    <string name="vBill">Factura</string>
+    <string name="vFriends">Amigos</string>
+    <string name="vRounding">Redondeo</string>
+    <string name="vSliders">Deslizadores</string>
+    <string name="vTotalBill">Factura Total</string>
+    <string name="vtip">Propina</string>
+</resources>
