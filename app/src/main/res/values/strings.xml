@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Tip</string>
     <string name="lbl_round_bill">Round Bill</string>
     <string name="lbl_round_tip">Round Tip</string>
     <string name="lbl_tip_perc">Tip Percentage</string>
@@ -11,4 +10,5 @@
     <string name="vRounding">Rounding</string>
     <string name="vSliders">Sliders</string>
     <string name="nFriends"># of Friends</string>
+    <string name="app_name">The Tipper</string>
 </resources>

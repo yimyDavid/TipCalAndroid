@@ -1,31 +1,18 @@
 package com.example.ctmy.tip;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.util.Locale;
-
 
 public class TipCalculator extends AppCompatActivity {
 
@@ -92,10 +79,17 @@ public class TipCalculator extends AppCompatActivity {
         int dTipPercent = settings.getInt("tipPercent", 15);
         int dFriends = settings.getInt("friendsQuantity", 1);
         sbPercentValue.setProgress(dTipPercent);
-        sbFriendsValue.setProgress(dFriends+1);
+        sbFriendsValue.setProgress(dFriends);
+
+        dlblPercent.setText(String.valueOf(dTipPercent));
+        dlblFriends.setText(String.valueOf(dFriends + 1));
 
         tvPercentage.setText(String.valueOf(dTipPercent));
         tvFriends.setText(String.valueOf(dFriends+1));
+
+
+        sbDrawerPercent.setProgress(dTipPercent);
+        sbDrawerFriends.setProgress(dFriends);
         //Show calculations when the app opens
         calculateTip();
         CalculateTotal();
@@ -267,7 +261,7 @@ public class TipCalculator extends AppCompatActivity {
 
             int drawerPercent;
             int drawerFriends;
-            //TODO: SAVE VALUES
+
             SharedPreferences.Editor edit = settings.edit();
             edit.putInt("tipPercent", sbDrawerPercent.getProgress());
             edit.putInt("friendsQuantity", sbDrawerFriends.getProgress());
