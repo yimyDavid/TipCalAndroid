@@ -1,6 +1,9 @@
 package com.example.ctmy.tip;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.provider.Settings.Secure;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,8 +16,32 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import com.google.android.vending.licensing.AESObfuscator;
+import com.google.android.vending.licensing.LicenseChecker;
+import com.google.android.vending.licensing.LicenseCheckerCallback;
+import com.google.android.vending.licensing.Policy;
+import com.google.android.vending.licensing.ServerManagedPolicy;
+
+import android.os.Handler;
+import android.widget.Toast;
+
 
 public class TipCalculator extends AppCompatActivity {
+
+    /**
+     * licencing variables
+     */
+
+    private static final String BASE64_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAikP1bl+7MmyGwccqXhc5Sz+Lr7opVhEcoqAIi2PsF56y4zc6EhiZXbKSsyIoeC54si8b6K6cVN8qogPKJBS78rLRVBXOn1Aqc7X4JCnppqK+FymLmTjcMtYx65snLKHXK0H0TtAbECGShV4Tkw6KpedM7x+MxpO8JAiDt/YxsHk9RWgwhJW31JFn3fOSx6iHZjP3kCGgBKmC8NSN8EQ7vZz9kYiZJ+v+1LJICEcp0Q2WabeL7GQBi7xAxewDc3GDN0XaL5m4dvSNPVfxcdr9BMD3oALF3s7QFN3/LbOPtFLe4gfZ5igL1GckkHMKnJd75E7c84yHVVvjRVzjJ4bdFQIDAQAB";
+
+    private static final byte[] SALT = new byte[] {
+            -46, 65, 30, -128, -103, -57, 74, -64, 51, 88, -95,
+            -45, 77, -117, -36, -113, -11, 32, -64, 89
+    };
+    private Handler mHandler;
+
+    private LicenseCheckerCallback mLicenseCheckerCallback;
+    private LicenseChecker mChecker;
 
     private DrawerLayout mDrawerLayout;
     private static final String SETTING_VALUES = "setting_values";
@@ -50,6 +77,24 @@ public class TipCalculator extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        //check licence
+        mChecker.checkAccess(mLicenseCheckerCallback);
+        /**
+         * Instatiation of variables for licencing
+         */
+        String deviceId = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
+        //Construc the LicenseCheckerCallback.
+        mLicenseCheckerCallback = new MyLicenseCheckerCallback();
+
+        //construct the LicenseChecker with a Policy.
+        mChecker = new LicenseChecker(this, new ServerManagedPolicy(this,
+                new AESObfuscator(SALT, getPackageName(), deviceId)),
+                BASE64_PUBLIC_KEY
+                );
+        mHandler = new Handler();
+
         setContentView(R.layout.activity_tip_calculator);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -387,6 +432,65 @@ public class TipCalculator extends AppCompatActivity {
         }
 
         edit.commit();
+    }
+
+    private class MyLicenseCheckerCallback  implements LicenseCheckerCallback{
+
+        public void allow(int reason){
+            if(isFinishing()){
+                return;
+            }
+            // Should allow user access.
+            //Modify UI wich I don't want
+            displayResult(getString(R.string.allow));
+
+        }
+
+        public void dontAllow(int policyReason){
+            if(isFinishing()){
+                // Don't update UI if Activity is finishing.
+                return;
+            }
+            displayResult(getString(R.string.dont_allow));
+            //displayDialog(policyReason == Policy.RETRY);
+        }
+
+        public void applicationError(int errorCode){
+            if(isFinishing()){
+                return;
+            }
+
+            String result = String.format(getString(R.string.application_error),errorCode);
+            displayResult(result);
+        }
+    }
+
+    private void displayResult(final String result){
+
+        mHandler.post(new Runnable() {
+
+            @Override
+            public void run() {
+
+                Toast.makeText(getBaseContext(),result,Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+   /* private void displayDialog(final boolean showRetry){
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                showDialog(showRetry?1:0);
+                //TODO
+            }
+        });
+    }*/
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        mChecker.onDestroy();
     }
 
 }
