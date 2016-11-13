@@ -1,4 +1,5 @@
-package com.example.ctmy.tip;
+//package com.example.ctmy.tip;
+package com.ctmyapplications.thetipper;
 
 import android.content.SharedPreferences;
 import android.support.v4.widget.DrawerLayout;

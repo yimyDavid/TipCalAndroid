@@ -2,7 +2,6 @@
     <string name="lbl_round_bill">Round Bill</string>
     <string name="lbl_round_tip">Round Tip</string>
     <string name="lbl_tip_perc">Tip Percentage</string>
-    <string name="percent_value">10</string>
     <string name="vBill">Bill</string>
     <string name="vtip">Tip</string>
     <string name="vTotalBill">Total Bill</string>

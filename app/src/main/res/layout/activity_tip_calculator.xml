@@ -304,7 +304,7 @@
                 android:layout_alignParentRight="true"
                 android:paddingRight="8dp"
                 android:textColor="#3e3e3e"
-                android:text="@string/percent_value"
+                android:text="10"
                 android:textSize="16sp"
                 android:paddingLeft="8dp"/>
 

@@ -4,10 +4,11 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
     defaultConfig {
-        applicationId 'com.ctmyapplications.tip'
+        applicationId 'com.ctmyapplications.thetipper'
         minSdkVersion 15
         targetSdkVersion 23
         versionName '1.0'
+        versionCode 1
     }
     buildTypes {
         release {
@@ -16,6 +17,20 @@ android {
         }
     }
     productFlavors {
+        beta {
+            minSdkVersion 15
+            applicationId 'com.ctmyapplications.thetipperBeta'
+            targetSdkVersion 23
+            versionCode 1
+            versionName '1.0'
+        }
+        pro{
+            minSdkVersion 15
+            applicationId 'com.ctmyapplications.thetipperPro'
+            targetSdkVersion 23
+            versionCode 1
+            versionName '1.0'
+        }
     }
 }
 

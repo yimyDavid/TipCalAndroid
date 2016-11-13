@@ -1,4 +1,4 @@
-package com.example.ctmy.tip;
+package com.example.ctmy.thetipper;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
