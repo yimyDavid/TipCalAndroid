@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/content_frame"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:baselineAligned="false">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="#3a3a3a"
             android:padding="16dp"
             android:layout_weight="1"
-            android:gravity="clip_vertical">
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -26,7 +26,8 @@
                 android:text="@string/vBill"
                 android:id="@+id/lblBill"
                 android:gravity="center"
-                style="@style/lblDescription" />
+                style="@style/lblDescription"
+                android:textSize="20sp" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -35,11 +36,12 @@
                 android:ems="10"
                 android:id="@+id/txtBill"
                 android:gravity="center"
-                android:textSize="60sp"
+                android:textSize="50sp"
                 android:text="0.00"
                 android:textColor="#09f8e0"
                 android:background="@null"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                android:selectAllOnFocus="true"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -48,7 +50,8 @@
                 android:text="@string/vtip"
                 android:id="@+id/lblTip"
                 android:gravity="left"
-                style="@style/lblDescription" />
+                style="@style/lblDescription"
+                android:textSize="20sp" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -57,7 +60,7 @@
                 android:ems="10"
                 android:id="@+id/txtTip"
                 android:gravity="center"
-                android:textSize="45sp"
+                android:textSize="35sp"
                 android:text="0.00"
                 android:textColor="#dcdbdb"
                 android:background="@null"
@@ -68,7 +71,8 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_weight="1">
 
                 <TextView
                     android:layout_width="0dp"
@@ -79,18 +83,18 @@
                     android:textStyle="bold|italic"
                     android:textColor="#ffffff"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_gravity="top" />
 
                 <SeekBar
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/sbPercent"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="12"
                     android:max="30"
                     android:progress="15"
-                    android:layout_marginLeft="-15dp" />
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="top" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -103,19 +107,19 @@
                     android:textSize="20sp"
                     android:textStyle="bold|italic"
                     android:layout_weight="2"
-                    android:layout_marginTop="4dp"
-                    android:layout_gravity="center_vertical" />
-
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="top" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="16dp"
             android:background="@drawable/gradient"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="center_vertical">
 
             <TextView
                 style="@style/lblDescription"
@@ -125,7 +129,9 @@
                 android:text="@string/vTotalBill"
                 android:id="@+id/textView"
                 android:gravity="left"
-                android:textColor="#031969" />
+                android:layout_marginTop="10dp"
+                android:textColor="#031969"
+                android:textSize="20sp" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -134,7 +140,7 @@
                 android:ems="10"
                 android:id="@+id/vTotalBill"
                 android:gravity="center"
-                android:textSize="60sp"
+                android:textSize="50sp"
                 android:text="0.00"
                 android:textColor="#40492a"
                 android:editable="false"
@@ -150,7 +156,8 @@
                 android:text="@string/vFriends"
                 android:id="@+id/textView2"
                 android:gravity="left"
-                android:textColor="#031969" />
+                android:textColor="#031969"
+                android:textSize="20sp" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -158,19 +165,20 @@
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/vTip"
-                android:gravity="center"
-                android:textSize="45sp"
+                android:textSize="35sp"
                 android:text="0.00"
                 android:textColor="#504930"
                 android:editable="false"
                 android:enabled="false"
-                android:background="@null" />
+                android:background="@null"
+                android:gravity="center" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_weight="1">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -180,23 +188,23 @@
                     android:textSize="20sp"
                     android:textStyle="bold|italic"
                     android:textColor="#504930"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/textView3" />
+                    android:layout_marginBottom="0dp"
+                    android:id="@+id/textView3"
+                    android:layout_gravity="top" />
 
                 <SeekBar
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/sbFriends"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="0dp"
                     android:layout_weight="12"
                     android:max="11"
                     android:splitTrack="false"
                     android:progressDrawable="@color/colorAccent"
                     android:maxHeight="1dp"
                     android:progress="0"
-                    android:layout_marginLeft="-20dp" />
+                    android:layout_marginLeft="-15dp"
+                    android:layout_gravity="top" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -204,16 +212,16 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="1"
                     android:id="@+id/lblFriends"
+                    android:gravity="center"
                     android:textColor="#3a3a3a"
                     android:textSize="20sp"
                     android:textStyle="bold|italic"
                     android:layout_weight="2"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="left" />
+                    android:layout_gravity="top" />
             </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
-    <!--end main layout-->
+
 
 </LinearLayout>

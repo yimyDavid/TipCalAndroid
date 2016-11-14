@@ -39,10 +39,11 @@ public class TipCalculator extends AppCompatActivity {
             -46, 65, 30, -128, -103, -57, 74, -64, 51, 88, -95,
             -45, 77, -117, -36, -113, -11, 32, -64, 89
     };
-    private Handler mHandler;
+
 
     private LicenseCheckerCallback mLicenseCheckerCallback;
     private LicenseChecker mChecker;
+    private Handler mHandler;
 
     private DrawerLayout mDrawerLayout;
     private static final String SETTING_VALUES = "setting_values";
@@ -78,25 +79,27 @@ public class TipCalculator extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        //check licence
-        mChecker.checkAccess(mLicenseCheckerCallback);
+        setContentView(R.layout.activity_tip_calculator);
         /**
          * Instatiation of variables for licencing
          */
-        String deviceId = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
+
         //Construc the LicenseCheckerCallback.
+        mHandler = new Handler();
+        String deviceId = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
         mLicenseCheckerCallback = new MyLicenseCheckerCallback();
 
         //construct the LicenseChecker with a Policy.
+
+
         mChecker = new LicenseChecker(this, new ServerManagedPolicy(this,
                 new AESObfuscator(SALT, getPackageName(), deviceId)),
                 BASE64_PUBLIC_KEY
                 );
-        mHandler = new Handler();
 
-        setContentView(R.layout.activity_tip_calculator);
+        //check licence
+        mChecker.checkAccess(mLicenseCheckerCallback);
+
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.setDrawerListener(new drawerMenuListener());
@@ -270,7 +273,7 @@ public class TipCalculator extends AppCompatActivity {
 
     }
 
-    private class drawerMenuListener implements android.support.v4.widget.DrawerLayout.DrawerListener{
+    private class drawerMenuListener implements DrawerLayout.DrawerListener{
         @Override
         public void onDrawerSlide(View drawerView, float slideOffset) {
 

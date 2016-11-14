@@ -11,4 +11,14 @@
     <string name="vTotalBill">Factura Total</string>
     <string name="vtip">Propina</string>
     <string name="app_name">El Propinador</string>
+    <string name="allow">Permitir Acceso</string>
+    <string name="application_error">Error de la aplicacion</string>
+    <string name="buy_button">Comprar</string>
+    <string name="check_license">Verificar Licencia</string>
+    <string name="dont_allow">Acceso no permitido</string>
+    <string name="quit_button">Salir</string>
+    <string name="retry_button">Reintentar</string>
+    <string name="unlicensed_dialog_body">La aplicacion no esta registrada. Comprelo del Mercado Android.</string>
+    <string name="unlicensed_dialog_retry_body">No se pudo validar la licencia del producto. Verifique su connection.</string>
+    <string name="unlicensed_dialog_title">La aplicacion no esta registrada</string>
 </resources>
