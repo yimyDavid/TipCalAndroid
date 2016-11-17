@@ -28,7 +28,7 @@ android {
     productFlavors {
         free {
             minSdkVersion 15
-            applicationId 'com.ctmyapplications.thetipper'
+            applicationId 'com.ctmyapplications.thetipperFree'
             targetSdkVersion 23
             versionCode 1
             versionName '1.0'

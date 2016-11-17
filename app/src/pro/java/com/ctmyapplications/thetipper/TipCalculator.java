@@ -33,7 +33,7 @@ public class TipCalculator extends AppCompatActivity {
      * licencing variables
      */
 
-    private static final String BASE64_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAikP1bl+7MmyGwccqXhc5Sz+Lr7opVhEcoqAIi2PsF56y4zc6EhiZXbKSsyIoeC54si8b6K6cVN8qogPKJBS78rLRVBXOn1Aqc7X4JCnppqK+FymLmTjcMtYx65snLKHXK0H0TtAbECGShV4Tkw6KpedM7x+MxpO8JAiDt/YxsHk9RWgwhJW31JFn3fOSx6iHZjP3kCGgBKmC8NSN8EQ7vZz9kYiZJ+v+1LJICEcp0Q2WabeL7GQBi7xAxewDc3GDN0XaL5m4dvSNPVfxcdr9BMD3oALF3s7QFN3/LbOPtFLe4gfZ5igL1GckkHMKnJd75E7c84yHVVvjRVzjJ4bdFQIDAQAB";
+    private static final String BASE64_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlBqQ8AgFgIwPKV7/jxYNeCRp8zkxPFsVqFaxcGH9t9ZJKfgjdyKHfSNpNQHgcsLnAsvqKalQKxu2rCSbMHa46gg9mhpWiC1KSC6ZLIdGcB7RhCoax33cpaGvkxc0TOnsGTpnwENC0oahs4GCxwLlIothzV2iDewz1b2/HOIKJBvlq1IAJpsJ0CMKHJd3GsIn9jqKhs5YydfNu/c+cDtL7UBve3F6oYg1Gty1g2iWVzGkADMnu9IfwxQo9ng6hz9J3MhXuXFau3Ya4u2IN5TgzU3xuTaZ1vovYFnXx6SyCEpccsE5v0oyJSDN9FCWqE5FW5YLJAbCGmu7xm0d2clOoQIDAQAB";
 
     private static final byte[] SALT = new byte[] {
             -46, 65, 30, -128, -103, -57, 74, -64, 51, 88, -95,

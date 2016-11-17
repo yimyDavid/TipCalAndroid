@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:baselineAligned="false">
@@ -35,7 +37,7 @@
                 android:ems="10"
                 android:id="@+id/txtBill"
                 android:gravity="center"
-                android:textSize="50sp"
+                android:textSize="60sp"
                 android:text="0.00"
                 android:textColor="#09f8e0"
                 android:background="@null"
@@ -57,7 +59,7 @@
                 android:ems="10"
                 android:id="@+id/txtTip"
                 android:gravity="center"
-                android:textSize="35sp"
+                android:textSize="45sp"
                 android:text="0.00"
                 android:textColor="#dcdbdb"
                 android:background="@null"
@@ -134,7 +136,7 @@
                 android:ems="10"
                 android:id="@+id/vTotalBill"
                 android:gravity="center"
-                android:textSize="50sp"
+                android:textSize="60sp"
                 android:text="0.00"
                 android:textColor="#40492a"
                 android:editable="false"
@@ -159,7 +161,7 @@
                 android:ems="10"
                 android:id="@+id/vTip"
                 android:gravity="center"
-                android:textSize="35sp"
+                android:textSize="45sp"
                 android:text="0.00"
                 android:textColor="#504930"
                 android:editable="false"
@@ -215,5 +217,147 @@
 
     </LinearLayout>
     <!--end main layout-->
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:orientation="vertical"
+        android:clipToPadding="false"
+        android:background="@color/settingBackground">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/settingForeground"
+            android:elevation="1dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/settingHeadingText"
+                android:text="@string/vRounding"
+                android:textSize="18sp"/>
+            <CheckBox
+                android:id="@+id/roundBill"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/lbl_round_bill"
+                android:textColor="#3e3e3e"
+                android:paddingLeft="8dp"
+                android:button="@null"
+                android:drawableRight="@drawable/apptheme_btn_check_holo_light"
+                android:paddingTop="-10dp"
+                android:onClick="onCheckedClicked"/>
+            <CheckBox
+                android:id="@+id/roundTip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_round_tip"
+                android:button="@null"
+                android:textColor="#3e3e3e"
+                android:paddingLeft="8dp"
+                android:paddingTop="-10dp"
+                android:drawableRight="@drawable/apptheme_btn_check_holo_light"
+                android:layout_marginTop="-6dp"
+                android:onClick="onCheckedClicked"/>
+        </LinearLayout>
 
-</LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="16dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/settingForeground"
+            android:elevation="1dp">
+
+            <TextView
+                android:id="@+id/rounding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/settingHeadingText"
+                android:text="@string/vSliders"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/slider_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rounding"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/lbl_percent"
+                android:textColor="#3e3e3e"
+                android:text="@string/lbl_tip_perc"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"/>
+            <TextView
+                android:id="@+id/lbl_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rounding"
+                android:layout_alignParentRight="true"
+                android:paddingRight="8dp"
+                android:textColor="#3e3e3e"
+                android:text="10"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"/>
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_sb_tip"
+                android:layout_marginBottom="0dp"
+                android:layout_below="@+id/slider_percent"
+                android:layout_weight="12"
+                android:max="30"
+                android:splitTrack="false"
+                android:progressDrawable="@color/colorAccent"
+                android:maxHeight="1dp"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/lbl_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#3e3e3e"
+                android:text="@string/nFriends"
+                android:layout_below="@+id/setting_sb_tip"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/lbl_friends_number"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"/>
+
+            <TextView
+                android:id="@+id/lbl_friends_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#3e3e3e"
+                android:paddingRight="8dp"
+                android:text="10"
+                android:layout_below="@+id/setting_sb_tip"
+                android:layout_alignParentRight="true"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"/>
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sbDFriends"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="12"
+                android:max="11"
+                android:layout_below="@+id/lbl_friends"
+                android:splitTrack="false"
+                android:progressDrawable="@color/colorAccent"
+                android:maxHeight="1dp"
+                android:progress="0" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>

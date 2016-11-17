@@ -146,13 +146,19 @@ public class LicenseChecker implements ServiceConnection {
             if (mService == null) {
                 Log.i(TAG, "Binding to licensing service.");
                 try {
-                    boolean bindResult = mContext
+                    Intent serviceIntent = new Intent(new String(Base64.decode("Y29tLmFuZHJvaWQudmVuZGluZy5saWNlbnNpbmcuSUxpY2Vuc2luZ1NlcnZpY2U=")));
+                    serviceIntent.setPackage("com.android.vending");
+
+                    /*boolean bindResult = mContext
                             .bindService(
                                     new Intent(
                                             new String(
                                                     Base64.decode("Y29tLmFuZHJvaWQudmVuZGluZy5saWNlbnNpbmcuSUxpY2Vuc2luZ1NlcnZpY2U="))),
                                     this, // ServiceConnection.
-                                    Context.BIND_AUTO_CREATE);
+                                    Context.BIND_AUTO_CREATE);*/
+                    boolean bindResult = mContext.bindService(serviceIntent,
+                            this,
+                            Context.BIND_AUTO_CREATE);
 
                     if (bindResult) {
                         mPendingChecks.offer(validator);
