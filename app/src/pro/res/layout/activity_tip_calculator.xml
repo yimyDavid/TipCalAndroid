@@ -7,10 +7,13 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/content_frame"
+        android:id="@+id/tip_bill"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <LinearLayout
             android:orientation="vertical"
@@ -65,7 +68,8 @@
                 android:textColor="#dcdbdb"
                 android:background="@null"
                 android:editable="false"
-                android:enabled="false" />
+                android:enabled="false"
+                android:onClick="onCheckedClicked"/>
 
             <LinearLayout
                 android:orientation="horizontal"

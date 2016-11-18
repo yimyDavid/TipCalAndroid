@@ -2,9 +2,11 @@
 package com.ctmyapplications.thetipper;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.provider.Settings.Secure;
+import android.renderscript.ScriptGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -101,6 +104,7 @@ public class TipCalculator extends AppCompatActivity {
         mChecker.checkAccess(mLicenseCheckerCallback);
 
 
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.setDrawerListener(new drawerMenuListener());
 
@@ -139,6 +143,20 @@ public class TipCalculator extends AppCompatActivity {
 
         sbDrawerPercent.setProgress(dTipPercent);
         sbDrawerFriends.setProgress(dFriends);
+
+        tvBillAmount.requestFocus();
+
+        View parent = findViewById(R.id.tip_bill);
+        parent.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+            @Override
+            public void onFocusChange(View view, boolean hasFocus){
+                if(hasFocus){
+                    hideKeyboard(view);
+                    tvBillAmount.requestFocus();
+                }
+            }
+        });
+
         //Show calculations when the app opens
         calculateTip();
         CalculateTotal();
@@ -161,6 +179,7 @@ public class TipCalculator extends AppCompatActivity {
 
             }
         });
+
         tvBillAmount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -168,6 +187,7 @@ public class TipCalculator extends AppCompatActivity {
                 editText.performLongClick();
             }
         });
+
 
         sbFriendsValue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -273,6 +293,8 @@ public class TipCalculator extends AppCompatActivity {
 
     }
 
+
+
     private class drawerMenuListener implements DrawerLayout.DrawerListener{
         @Override
         public void onDrawerSlide(View drawerView, float slideOffset) {
@@ -341,6 +363,11 @@ public class TipCalculator extends AppCompatActivity {
 
         @Override
         public void onDrawerStateChanged(int newState) {}
+    }
+
+    public void hideKeyboard(View view){
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     boolean isBillAmountWrong(){

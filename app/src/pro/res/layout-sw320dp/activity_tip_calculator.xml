@@ -7,13 +7,18 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/tip_bill"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <LinearLayout
             android:orientation="vertical"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#3a3a3a"
@@ -37,7 +42,7 @@
                 android:ems="10"
                 android:id="@+id/txtBill"
                 android:gravity="center"
-                android:textSize="60sp"
+                android:textSize="50sp"
                 android:text="0.00"
                 android:textColor="#09f8e0"
                 android:background="@null"
@@ -59,18 +64,20 @@
                 android:ems="10"
                 android:id="@+id/txtTip"
                 android:gravity="center"
-                android:textSize="45sp"
+                android:textSize="35sp"
                 android:text="0.00"
                 android:textColor="#dcdbdb"
                 android:background="@null"
                 android:editable="false"
-                android:enabled="false" />
+                android:enabled="false"
+                android:onClick="onCheckedClicked"/>
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -81,7 +88,8 @@
                     android:textStyle="bold|italic"
                     android:textColor="#ffffff"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="top" />
 
                 <SeekBar
                     android:layout_width="0dp"
@@ -92,7 +100,8 @@
                     android:layout_weight="12"
                     android:max="30"
                     android:progress="15"
-                    android:layout_marginLeft="-15dp" />
+                    android:layout_marginLeft="-15dp"
+                    android:layout_gravity="top" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -106,7 +115,7 @@
                     android:textStyle="bold|italic"
                     android:layout_weight="2"
                     android:layout_marginTop="4dp"
-                    android:layout_gravity="center_vertical" />
+                    android:layout_gravity="center_vertical|top" />
 
             </LinearLayout>
         </LinearLayout>
@@ -136,7 +145,7 @@
                 android:ems="10"
                 android:id="@+id/vTotalBill"
                 android:gravity="center"
-                android:textSize="60sp"
+                android:textSize="50sp"
                 android:text="0.00"
                 android:textColor="#40492a"
                 android:editable="false"
@@ -161,7 +170,7 @@
                 android:ems="10"
                 android:id="@+id/vTip"
                 android:gravity="center"
-                android:textSize="45sp"
+                android:textSize="35sp"
                 android:text="0.00"
                 android:textColor="#504930"
                 android:editable="false"
@@ -172,7 +181,8 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -184,7 +194,8 @@
                     android:textColor="#504930"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="10dp"
-                    android:id="@+id/textView3" />
+                    android:id="@+id/textView3"
+                    android:layout_gravity="top" />
 
                 <SeekBar
                     android:layout_width="0dp"
@@ -198,7 +209,8 @@
                     android:progressDrawable="@color/colorAccent"
                     android:maxHeight="1dp"
                     android:progress="0"
-                    android:layout_marginLeft="-20dp" />
+                    android:layout_marginLeft="-20dp"
+                    android:layout_gravity="top" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -210,7 +222,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold|italic"
                     android:layout_weight="2"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center_vertical|top"
                     android:gravity="left" />
             </LinearLayout>
         </LinearLayout>
