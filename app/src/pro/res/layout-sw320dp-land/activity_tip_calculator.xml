@@ -226,7 +226,7 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="right"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:clipToPadding="false"
         android:background="@color/settingBackground">
         <LinearLayout
@@ -255,7 +255,8 @@
                 android:button="@null"
                 android:drawableRight="@drawable/apptheme_btn_check_holo_light"
                 android:paddingTop="-10dp"
-                android:onClick="onCheckedClicked"/>
+                android:onClick="onCheckedClicked"
+                android:textSize="16sp" />
             <CheckBox
                 android:id="@+id/roundTip"
                 android:layout_width="match_parent"
@@ -267,7 +268,8 @@
                 android:paddingTop="-10dp"
                 android:drawableRight="@drawable/apptheme_btn_check_holo_light"
                 android:layout_marginTop="-6dp"
-                android:onClick="onCheckedClicked"/>
+                android:onClick="onCheckedClicked"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <RelativeLayout
