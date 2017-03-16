@@ -474,7 +474,8 @@ public class TipCalculator extends AppCompatActivity {
             }
             // Should allow user access.
             //Modify UI wich I don't want
-            displayResult(getString(R.string.allow));
+            /* The message shown if the user has a original copy of the app*/
+            //displayResult(getString(R.string.allow));
 
         }
 
@@ -483,7 +484,8 @@ public class TipCalculator extends AppCompatActivity {
                 // Don't update UI if Activity is finishing.
                 return;
             }
-            displayResult(getString(R.string.dont_allow));
+            /* It should show dialog to prevent this user from accessing the app */
+            //displayResult(getString(R.string.dont_allow));
             //displayDialog(policyReason == Policy.RETRY);
         }
 
