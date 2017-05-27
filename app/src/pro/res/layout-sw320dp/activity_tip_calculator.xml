@@ -68,8 +68,8 @@
                 android:text="0.00"
                 android:textColor="#dcdbdb"
                 android:background="@null"
-                android:cldaickable="true"
-                android:enabled="false" />
+                android:enabled="true"
+                android:focusable="false"/>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -91,16 +91,17 @@
                     android:layout_gravity="top" />
 
                 <SeekBar
+                    android:id="@+id/sbPercent"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/sbPercent"
+                    android:layout_gravity="top"
                     android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="-15dp"
                     android:layout_marginTop="10dp"
                     android:layout_weight="12"
+                    android:clickable="true"
                     android:max="30"
-                    android:progress="15"
-                    android:layout_marginLeft="-15dp"
-                    android:layout_gravity="top" />
+                    android:progress="15" />
 
                 <TextView
                     android:layout_width="0dp"

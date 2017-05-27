@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.provider.Settings.Secure;
 import android.renderscript.ScriptGroup;
 import android.support.v4.widget.DrawerLayout;
@@ -193,11 +194,12 @@ public class TipCalculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                // Show message when both tip and bill are rounded.
-               double tipBillAndTip = totalBill - billAmount;
-               Context c = getApplicationContext();
-               Toast tipWithBillAndTipRounded = Toast.makeText(c, String.format("%.2f Actual Tip ", tipBillAndTip), Toast.LENGTH_LONG);
-               tipWithBillAndTipRounded.show();
-                System.out.println("funciona click");
+                if(ROUND_BILL && ROUND_TIP) {
+                    double tipBillAndTip = totalBill - billAmount;
+                    Context c = getApplicationContext();
+                    Toast tipWithBillAndTipRounded = Toast.makeText(c, String.format("%.2f Actual Tip  ", tipBillAndTip), Toast.LENGTH_LONG);
+                    tipWithBillAndTipRounded.show();
+                }
            }
         });
 
