@@ -67,9 +67,9 @@
                 android:text="0.00"
                 android:textColor="#dcdbdb"
                 android:background="@null"
+                android:clickable="true"
                 android:editable="false"
-                android:enabled="false"
-                android:onClick="onCheckedClicked"/>
+                android:enabled="false" />
 
             <LinearLayout
                 android:orientation="horizontal"

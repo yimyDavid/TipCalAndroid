@@ -2,7 +2,7 @@
 package com.ctmyapplications.thetipper;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 
 
-public class TipCalculator extends AppCompatActivity {
+public class TipCalculator extends Activity {
 
 
     private boolean ROUND_BILL = false;
@@ -172,6 +172,7 @@ public class TipCalculator extends AppCompatActivity {
         if(ROUND_BILL && ROUND_TIP){
             totalBill = billAmount + tipAmount;
             totalBill = Math.ceil(totalBill);
+            //TODO show actual tip amount when tip and bill are rounded
         }else if(ROUND_BILL && !ROUND_TIP) {
             totalBill = Math.ceil(totalBill);
             tipAmount = totalBill-billAmount;

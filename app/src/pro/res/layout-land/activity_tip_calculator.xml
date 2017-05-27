@@ -69,7 +69,7 @@
                 android:background="@null"
                 android:editable="false"
                 android:enabled="false"
-                android:onClick="onCheckedClicked"/>
+                android:clickable="true"/>
 
             <LinearLayout
                 android:orientation="horizontal"

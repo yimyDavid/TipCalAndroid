@@ -189,6 +189,18 @@ public class TipCalculator extends AppCompatActivity {
             }
         });
 
+        tvTipAmount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // Show message when both tip and bill are rounded.
+               double tipBillAndTip = totalBill - billAmount;
+               Context c = getApplicationContext();
+               Toast tipWithBillAndTipRounded = Toast.makeText(c, String.format("%.2f Actual Tip ", tipBillAndTip), Toast.LENGTH_LONG);
+               tipWithBillAndTipRounded.show();
+                System.out.println("funciona click");
+           }
+        });
+
 
         sbFriendsValue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -414,6 +426,8 @@ public class TipCalculator extends AppCompatActivity {
         if(ROUND_BILL && ROUND_TIP){
             totalBill = billAmount + tipAmount;
             totalBill = Math.ceil(totalBill);
+
+
         }else if(ROUND_BILL && !ROUND_TIP) {
             totalBill = Math.ceil(totalBill);
             tipAmount = totalBill-billAmount;
@@ -494,8 +508,8 @@ public class TipCalculator extends AppCompatActivity {
                 return;
             }
 
-            String result = String.format(getString(R.string.application_error),errorCode);
-            displayResult(result);
+            /// String result = String.format(getString(R.string.application_error), errorCode);
+            /// displayResult(result);
         }
     }
 
